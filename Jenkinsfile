@@ -1,6 +1,6 @@
 stage('Build') {
   node() {
-    //scm checkout
+    checkout scm
     sh './gradlew clean check'
     stash includes: './build/*', name: 'build'
   }
@@ -16,7 +16,7 @@ stage('Test') {
 
 stage('Promote') {
   node() {
-    //scm checkout
+    checkout scm
     unstash 'build'
     archiveArtifacts artifacts: 'build/***.war', fingerprint: true, onlyIfSuccessful: true
   }
