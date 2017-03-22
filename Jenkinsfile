@@ -18,6 +18,8 @@ stage('Promote') {
   node() {
     checkout scm
     unstash 'build'
+    sh 'ls -la'
+    sh 'ls -la build/'
     archiveArtifacts artifacts: 'build/***.war'
   }
 }
