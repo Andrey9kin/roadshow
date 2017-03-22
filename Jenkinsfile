@@ -16,6 +16,7 @@ stage('Test') {
 
 stage('Promote') {
   node() {
+    deleteDir()
     checkout scm
     unstash 'build'
     sh 'ls -la'
