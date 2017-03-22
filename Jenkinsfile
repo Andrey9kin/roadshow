@@ -5,7 +5,7 @@ pipeline {
             agent any
             steps {
                 sh './gradlew clean check'
-                stash includes: 'build', name: 'build'
+                stash includes: 'build/*', name: 'build'
             }
         }
         stage('test') {
