@@ -18,7 +18,7 @@ stage('Promote') {
   node() {
     checkout scm
     unstash 'build'
-    archiveArtifacts artifacts: 'build/***.war', fingerprint: true, onlyIfSuccessful: true
+    archiveArtifacts artifacts: 'build/***.war'
   }
 }
                 
