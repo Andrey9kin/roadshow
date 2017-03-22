@@ -2,7 +2,7 @@ stage('Build') {
   node() {
     checkout scm
     sh './gradlew clean check'
-    stash includes: './build/*', name: 'build'
+    stash includes: 'build', name: 'build'
   }
 }
 
