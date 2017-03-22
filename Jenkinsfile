@@ -11,5 +11,10 @@ pipeline {
                 junit 'build/test-results/*.xml'
             }
         }
+        stage('deploy') {
+            steps {
+                echo 'whatever'
+            }
+        }
     }
 }
