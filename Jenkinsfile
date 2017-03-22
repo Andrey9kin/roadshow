@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                sh './gradlew check'
+                sh './gradlew clean check'
             }
         }
         stage('archive') {
