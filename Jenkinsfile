@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                sh './gradlew clean check'
+                timeout(30) {
+                    sh './gradlew clean check'
+                }
             }
         }
         stage('archive') {
